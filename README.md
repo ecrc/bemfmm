@@ -28,5 +28,4 @@ make clean
 
 make 
 
-### Note that this repository will be gradually changed from Fortran to C++ for future reusability and potential performance enhancements ###
 

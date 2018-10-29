@@ -1,0 +1,37 @@
+1				! total no. of frequencies
+3.0d2                           ! single frequency
+0.0d0   0.0d0    1.0d0   0.0d0  ! the,phi,ethetad,ephid
+0.0d0	180.0d0               	! the_sta_degree and the_end_degree
+0.0d0	0.0d0			! phi_sta_degree and phi_end_degree
+361	1                   	! ntheta, and nphi
+1.0d0   1.0d0  0.0d0	        ! epsilon_r, mu_r, loss_sigma
+0.0d0                           ! alpha (1=EFIE,0=MFIE,0.5=CFIE)
+2                              ! order of triangle for mesh
+2                              ! order of basis function for interpolation
+16                              ! number of higher degree Gauss quadrature points 
+9                               ! number of mfie line integral points
+9                               ! number of efie contour integral points
+1.0d-9                          ! precision of iteration solver
+100000                            ! maximum iteration numbers
+4.0d-1                          ! near patch distance (meter)
+42                              ! number of gauss points for rcs
+0                              ! 0: not normalized rcs; 1: normalized rcs
+1                              ! 0: read ANSYS file;  1: read IDEA-s file
+0                              ! 0: not point convert;  1: point convert 
+0                              ! 0: not use jj_mie;  1: use jj_mie
+0                              ! 0: not calculate onepatch;  1: calculate onepatch 
+0                              ! 0: not calculate total patch;  1: calculate total patch
+4.0d0                           ! position of near field observation point
+0.0d0	180.0d0               	! the_sta_degree and the_end_degree for near field observation point
+0.0d0	0.0d0			! phi_sta_degree and phi_end_degree for near field observation point
+361	1                   	! ntheta, and nphi for near field observation point
+600                         ! unknowns more than this, use iterative solver; otherwise, direct solver
+
+
+
+
+
+
+
+
+

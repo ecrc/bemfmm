@@ -1,0 +1,85 @@
+0.0e+0   0.0e+0    1.0e+0   0.0e+0  ! the,phi,ethetad,ephid
+0.0e+0	180.0e+0               	! the_sta_degree and the_end_degree
+0.0e+0	0.0e+0			! phi_sta_degree and phi_end_degree
+361	1                   	! ntheta, and nphi
+1.0e+0   1.0e+0  0.0e+0	        ! epsilon_r, mu_r, loss_sigma
+0.0e+0                           ! alpha (1=EFIE,0=MFIE,0.5=CFIE)
+2                              ! order of triangle for mesh
+2                              ! order of basis function for interpolation
+16                              ! number of higher degree Gauss quadrature points 
+9                               ! number of mfie line integral points
+9                               ! number of efie contour integral points
+1.0e-3                          ! precision of iteration solver
+1000                             ! maximum iteration numbers
+1.0e-1                           ! near patch distance (meter)
+42                              ! number of gauss points for rcs
+1                              ! 0: read ANSYS file;  1: read IDEA-s file
+1.0e+0                           ! position of near field observation point
+0.0e+0	180.0e+0               	! the_sta_degree and the_end_degree for near field observation point
+0.0e+0	0.0e+0			! phi_sta_degree and phi_end_degree for near field observation point
+361	1                   	! ntheta, and nphi for near field observation point
+600000                         ! unknowns more than this, use iterative solver; otherwise, direct solver
+1							   ! verbose FMM output
+40 								! number of threads
+100								!ncrit of FMM
+1									!check direct
+IDEAS_files/geo_mesh_156.inp
+IDEAS_files/geo_mesh_3156.inp
+list_files/qiu_curve_r1_0.08_4032.lis !geomatry input file
+list_files/geo_curve_tri_1126.inp !geomatry input file
+IDEAS_files/geo_mesh_3156.inp
+
+
+list_files/geo_curve_tri_120.inp
+list_files/qiu_curve_r1_0.08_4032.lis !geomatry input file
+list_files/geo_curve_tri_1126.inp !geomatry input file
+list_files/qiu_curve_r1_0.08_4032.lis !geomatry input file
+list_files/geo_curve_tri_1126.inp !geomatry input file
+
+
+
+
+
+1818.75                         ! single frequency
+
+list_files/geo_curve_tri_120.inp
+
+IDEAS_files/geo_mesh_156.inp
+
+
+list_files/geo_curve_tri_120.inp
+
+
+
+list_files/geo_curve_tri_1126.inp !geomatry input file
+
+list_files/geo_curve_tri_120.inp
+
+
+IDEAS_files/geo_mesh_156.inp
+list_files/geo_curve_tri_120.inp
+
+IDEAS_files/geo_mesh_156.inp
+IDEAS_files/geo_mesh_156.inp
+list_files/geo_curve_tri_1126.inp !geomatry input file
+geo_curve_tri.inp
+geo_curve_tri_1126.inp
+geo_curve_tri_120.inp
+geo_curve_tri_202.inp
+geo_curve_tri_396.inp
+geo_curve_tri_622.inp
+mom.inp
+mom_c.inp
+qiu_curve_r1_0.06_7320.lis
+qiu_curve_r1_0.08_4032.lis
+qiu_curve_r1_0.15_1126.lis
+qiu_curve_r1_0.1_2560.lis
+qiu_curve_r1_0.25_396.lis
+qiu_curve_r1_0.2_622.lis
+qiu_curve_r1_0.35_202.lis
+qiu_curve_r1_0.3_280.lis
+qiu_curve_r1_0.45_120.lis
+qiu_curve_r1_0.4_136.lis
+qiu_curve_r1_0.5_116.lis
+
+

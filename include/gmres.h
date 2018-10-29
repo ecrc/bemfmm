@@ -287,7 +287,6 @@ d_complex_t_vec cs(m,0.0);
 d_vector rc(m,0.0);
 d_complex_t ctemp = 0.0;
 double ay0, be, bea;
-std::ofstream outfile("cy.out");
 alogger::startTimer("gmres");
 ay0   = scnrm22(nd, crhs);
 itertotal = 0;

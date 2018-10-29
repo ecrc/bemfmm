@@ -71,8 +71,8 @@ private:
 
 public:
   Args(int argc = 0, char ** argv = NULL) :
-    geomfile("IDEAS_files/geo_mesh_156.inp"),
-    configfile("list_files/mom_c.inp"),
+    geomfile("geom/sphere/geo_mesh_156.inp"),
+    configfile("args"),
     partitioning("b"),
     threads(4),
     fmmverbose(0),

@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+bemfmm_test_mpi
+
+# Output data
+*.dat

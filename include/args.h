@@ -72,7 +72,7 @@ private:
 public:
   Args(int argc = 0, char ** argv = NULL) :
     geomfile("geom/sphere/geo_mesh_156.inp"),
-    configfile("args"),
+    configfile("application_params"),
     partitioning("b"),
     threads(4),
     fmmverbose(0),

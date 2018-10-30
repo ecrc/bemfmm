@@ -1,61 +1,48 @@
+
+all: clean bemfmm_test_mpi
+
 .SUFFIXES: .o .c .C .h .cxx .cpp
 .PHONY: clean intel shaheen_gnu shaheen_intel gnu
 
-BLAS_PATH=/home/abduljm/libs/petsc-3.9.3/arch-linux2-c-debug
-BLAS_LIB=${BLAS_PATH}/lib
-
-LAPACK_PATH=/home/abduljm/libs/petsc-3.9.3/arch-linux2-c-debug
-LAPACK_LIB=${LAPACK_PATH}/lib
-
-LIB_BLAS=-L${BLAS_LIB} -lfblas
-LIB_LAPACK=-L${LAPACK_LIB} -lflapack 
-
-LD_FLAGS+=${LIB_LAPACK} ${LIB_BLAS} -lgfortran -lm
-
+include make.inc
 
 # METIS
-METIS_PATH = METIS
-METIS_LIBS = -L${METIS_PATH}/lib/ -lparmetis -L${METIS_PATH}/lib/ -lmetis
-METIS_INCS = -I${METIS_PATH}/inc
+METIS_LIBS = -L${METIS_LIB_PATH} -lparmetis -lmetis
+METIS_INCS = -I${METIS_INC_PATH}
 
 # TBB
-TBB_PATH = TBB
-TBB_LIBS = -L${TBB_PATH}/lib/ -ltbb
-TBB_INCS = -I${TBB_PATH}/inc/
+TBB_LIBS = -L${TBB_LIB_PATH} -ltbb
+TBB_INCS = -I${TBB_INC_PATH}
 
-# FMM
-P = 10
-FMM_FLGS =  -DEXAFMM_EXPANSION=$P \
-            -DEXAFMM_SPHERICAL \
-            -DEXAFMM_HELMHOLTZ \
-            -DEXAFMM_ACOUSTICS \
-            -DEXAFMM_NEARF_TREATMENT \
-            -DEXAFMM_COUNT_KERNEL \
-            -DEXAFMM_USE_PARMETIS \
-            -DEXAFMM_WITH_TBB \
-            -DUSE_FMM #\
-            -DUSE_PART
-
-FMM_INCS = -Iinclude/fmm
+# LAPACK
+LAPACK_LIBS = -L${LAPACK_LIB_PATH} -lflapack -L${LAPACK_LIB_PATH} -lfblas -lm -lgfortran
 
 # Core
-LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LD_FLAGS}
-INCS = -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${FMM_INCS}
-FLGS = ${INCS} ${FMM_FLGS}  -mavx -O3 
-CXX = mpicxx
+LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS}
+INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS}
+FLGS = ${INCS} ${FMM_FLGS}
 
-intel: CXX = mpiicpc
-intel: FLGS += -qopenmp
-intel: clean bemfmm_test_mpi
+ifeq ($(MODE), DEV)
+  FLGS += -g  
+else
+  FLGS += -O3 -mavx
+endif
 
-gnu: CXX = mpicxx
-gnu: FLGS += -fopenmp
-gnu: clean bemfmm_test_mpi
-
-shaheen: CXX = CC
-shaheen: LIBS += -dynamic
-shaheen: FLGS += -fopenmp
-shaheen: clean bemfmm_test_mpi
+ifeq ($(COMP), SHAHEEN)
+	CXX = CC
+	LIBS += -dynamic
+	ifeq (${ENV}, SHAHEEN-GNU)
+		FLGS += -fopenmp
+	else ifeq (${ENV}, SHAHEEM-INTEL)
+		FLGS += -qopenmp
+	endif
+else ifeq ($(COMP), GNU)
+	CXX = mpicxx
+	FLGS += -fopenmp
+else ifeq ($(COMP), INTEL)
+	CXX = mpicpc
+	FLGS += -qopenmp
+endif
 
 SRC = bemfmm_test_mpi.cxx
 OBJ = $(SRC:.cxx=.o)

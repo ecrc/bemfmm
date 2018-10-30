@@ -64,29 +64,29 @@ namespace exafmm {
     logger::printTime("Total FMM");
   }
 #if USE_PART
-		/**
+    /**
    * initializes FMM
    * @param eps2 is the FMM epsilon 
    * @param fmmAttributes FMM performance control attributes
    * @param nb is the intitial number of bodies
    * @param xb a vector of X coordinates of bodies
-	 * @param yb a vector of Y coordinates of bodies
-	 * @param zb a vector of Z coordinates of bodies
+   * @param yb a vector of Y coordinates of bodies
+   * @param zb a vector of Z coordinates of bodies
    * @param xt a vector of X coordinates of triangular points
-	 * @param yt a vector of Y coordinates of triangular points
-	 * @param zt a vector of Z coordinates of triangular points
-	 * @param patchids a vector of Mesh node ids corresponding to each particle (to avoid self interaction among nodes)
-	 * @param nearGaussPoints Guass quadrature elements for near-field treatments (when enabled)
-	 * @param nhdgqp count of Gauss refinements for near-field treatments (when enabled)
-	 * @param ntriangles_ number of triangular patches
-	 * @param nipp_ number of integration points per patch
-	 * @param nearpd near patch distance threshold (to apply p-refinement)
-	 * @param ws integration points 
-	 * @param ipolator_near basis vector
+   * @param yt a vector of Y coordinates of triangular points
+   * @param zt a vector of Z coordinates of triangular points
+   * @param patchids a vector of Mesh node ids corresponding to each particle (to avoid self interaction among nodes)
+   * @param nearGaussPoints Guass quadrature elements for near-field treatments (when enabled)
+   * @param nhdgqp count of Gauss refinements for near-field treatments (when enabled)
+   * @param ntriangles_ number of triangular patches
+   * @param nipp_ number of integration points per patch
+   * @param nearpd near patch distance threshold (to apply p-refinement)
+   * @param ws integration points 
+   * @param ipolator_near basis vector
   */  
   void FMM_Init(double eps2, fmm_data fmmAttributes, 
-  			   int nb, std::vector<double>& xb, std::vector<double>& yb, std::vector<double>& zb, 
-					 std::vector<double>& xt, std::vector<double>& yt, std::vector<double>& zt, std::vector<int>& patchids, 
+           int nb, std::vector<double>& xb, std::vector<double>& yb, std::vector<double>& zb, 
+           std::vector<double>& xt, std::vector<double>& yt, std::vector<double>& zt, std::vector<int>& patchids, 
            std::vector<std::vector<double> > nearGaussPoints, int nhdgqp, int ntriangles_,
            int nipp_, double nearpd, std::vector<double> ws, 
            std::vector<std::vector<double> > ipolator_near) {
@@ -560,7 +560,7 @@ namespace exafmm {
       upDownPass2->upwardPass(bcells, false);
       upDownPass2->upwardPass(vcells, false);
     }        
-			treeMPI->setLET(vcells, cycles);
+      treeMPI->setLET(vcells, cycles);
   #pragma omp parallel sections
   { 
   #pragma omp section

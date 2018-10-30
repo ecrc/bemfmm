@@ -209,7 +209,7 @@ namespace bemfmm {
     /*!
       GMRES restart iteration
     */
-    int gmresRestart;		
+    int gmresRestart;   
     //! A public variable.
     /*!
       Write timing outputs for FMM
@@ -349,8 +349,8 @@ namespace bemfmm {
         alogger::logItem(stringLength,"nearpd",nearpd);
         alogger::logItem(stringLength,"ngprcs",ngprcs);
         alogger::logItem(stringLength,"rnfobp",rnfobp);
-        alogger::logItem(stringLength,"gmres precis",precis);				
-				alogger::logItem(stringLength,"gmres restart",gmresRestart);				
+        alogger::logItem(stringLength,"gmres precis",precis);       
+        alogger::logItem(stringLength,"gmres restart",gmresRestart);        
         alogger::logItem(stringLength,"frequency",frequency);
       }
     }
@@ -527,17 +527,17 @@ namespace bemfmm {
 
          if(nnpt == 6) {  
            char* firstRead = new char[sizeof(int)];
-	         input_file.seekg (0, std::ios::beg);
+           input_file.seekg (0, std::ios::beg);
            input_file.read(firstRead, sizeof(int));
            input_file.read(firstRead, sizeof(int));
            int npat = *((int*)firstRead);
            ntriangle=npat;
            size_t chunk = ntriangle/mpisize;
-	         input_file.seekg (sizeof(double)*(chunk*3*6*mpirank+1), std::ios::beg);
+           input_file.seekg (sizeof(double)*(chunk*3*6*mpirank+1), std::ios::beg);
            start_triangle = 0;
            if (mpirank == mpisize - 1){ 
-     	       int remainder = ntriangle%mpisize;
-	       if(remainder > 0) chunk += remainder;
+             int remainder = ntriangle%mpisize;
+         if(remainder > 0) chunk += remainder;
            }
            end_triangle = chunk;
            char* data = new char[sizeof(double)*chunk*3*6];
@@ -577,8 +577,8 @@ namespace bemfmm {
           int npat;
           double rcent[3];
           if(nnpt == 6) {
-	          char* firstRead = new char[sizeof(int)];
-	          input_file.seekg (0, std::ios::beg);
+            char* firstRead = new char[sizeof(int)];
+            input_file.seekg (0, std::ios::beg);
             input_file.read(firstRead, sizeof(int));
             nnod = *((int*)firstRead);
             input_file.read(firstRead, sizeof(int));
@@ -603,9 +603,9 @@ namespace bemfmm {
             double* doubleValues = (double*)secondRead;//reinterpret as doubles
 
             for (int i = 0; i < nnod; ++i) {            
-         	    sunod[0][i] = doubleValues[i*dim+0];
-	            sunod[1][i] = doubleValues[i*dim+1];
-	            sunod[2][i] = doubleValues[i*dim+2];
+              sunod[0][i] = doubleValues[i*dim+0];
+              sunod[1][i] = doubleValues[i*dim+1];
+              sunod[2][i] = doubleValues[i*dim+2];
               sum1 += sunod[0][i];
               sum2 += sunod[1][i];
               sum3 += sunod[2][i];
@@ -622,7 +622,7 @@ namespace bemfmm {
             input_file.read(thirdRead,npat*nnpt*sizeof(int));
             int* intValues = (int*)thirdRead;
             for (int i = 0; i < npat; ++i) {
-	            nsupan[i][0] = intValues[i*nnpt+0];
+              nsupan[i][0] = intValues[i*nnpt+0];
               nsupan[i][5] = intValues[i*nnpt+1];
               nsupan[i][2] = intValues[i*nnpt+2];
               nsupan[i][4] = intValues[i*nnpt+3];
@@ -631,8 +631,8 @@ namespace bemfmm {
               for (int j = 0; j < nnpt; ++j) --nsupan[i][j];            
             }
             delete firstRead;
-	          delete secondRead;
-        	  delete thirdRead;
+            delete secondRead;
+            delete thirdRead;
         } else {
           std::cout<<"cannot read higher order mesh now" << std::endl;
         }       
@@ -805,7 +805,7 @@ namespace bemfmm {
 
     input_file >> nthe_nf >> nphi_nf;
     std::getline(input_file,line);
-		nitermax = common_data::args->maxiter;    
+    nitermax = common_data::args->maxiter;    
     precis = common_data::args->precision;
     fmmVerbose = common_data::args->fmmverbose;
     fmmAttributes.nthreads = common_data::args->threads;
@@ -814,7 +814,7 @@ namespace bemfmm {
     fmmAttributes.ncrit = common_data::args->ncrit;
     fmmAttributes.partitioning = common_data::args->partitioning;
     checkFMMDirect = common_data::args->direct;
-		gmresRestart = common_data::args->gmresrestart;
+    gmresRestart = common_data::args->gmresrestart;
     writeTimingOutputs = common_data::args->writeoutput;
     geomatryFileName = common_data::args->geomfile;
 

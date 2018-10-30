@@ -208,6 +208,11 @@ namespace bemfmm {
     bool checkFMMDirect;
     //! A public variable.
     /*!
+      GMRES restart iteration
+    */
+    int gmresRestart;		
+    //! A public variable.
+    /*!
       Write timing outputs for FMM
     */
     bool writeTimingOutputs;
@@ -345,6 +350,8 @@ namespace bemfmm {
         alogger::logItem(stringLength,"nearpd",nearpd);
         alogger::logItem(stringLength,"ngprcs",ngprcs);
         alogger::logItem(stringLength,"rnfobp",rnfobp);
+        alogger::logItem(stringLength,"gmres precis",precis);				
+				alogger::logItem(stringLength,"gmres restart",gmresRestart);				
         alogger::logItem(stringLength,"frequency",frequency);
       }
     }
@@ -777,13 +784,7 @@ namespace bemfmm {
     std::getline(input_file,line);
 
     input_file >> nclgp;
-    std::getline(input_file,line);
-
-    input_file >> precis;
-    std::getline(input_file,line);
-
-    input_file >> nitermax;
-    std::getline(input_file,line);
+    std::getline(input_file,line);    
 
     input_file >> nearpd;
     std::getline(input_file,line);
@@ -805,10 +806,8 @@ namespace bemfmm {
 
     input_file >> nthe_nf >> nphi_nf;
     std::getline(input_file,line);
-
-    input_file >> nusolver;
-    std::getline(input_file,line);
-
+		nitermax = common_data::args->maxiter;    
+    precis = common_data::args->precision;
     fmmVerbose = common_data::args->fmmverbose;
     fmmAttributes.nthreads = common_data::args->threads;
     fmmAttributes.listbased = common_data::args->listbased;
@@ -816,6 +815,7 @@ namespace bemfmm {
     fmmAttributes.ncrit = common_data::args->ncrit;
     fmmAttributes.partitioning = common_data::args->partitioning;
     checkFMMDirect = common_data::args->direct;
+		gmresRestart = common_data::args->gmresrestart;
     writeTimingOutputs = common_data::args->writeoutput;
     geomatryFileName = common_data::args->geomfile;
 

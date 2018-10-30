@@ -42,7 +42,7 @@ FMM_INCS = -Iinclude/fmm
 # Core
 LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LD_FLAGS}
 INCS = -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${FMM_INCS}
-FLGS = ${INCS} ${FMM_FLGS} -O3 -mavx
+FLGS = ${INCS} ${FMM_FLGS}  -mavx -O3
 CXX = mpicxx
 
 intel: CXX = mpiicpc

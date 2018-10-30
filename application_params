@@ -9,8 +9,6 @@
 16                                   ! number of higher degree Gauss quadrature points 
 9                                    ! number of mfie line integral points
 9                                    ! number of efie contour integral points
-1.0e-3                               ! precision of iteration solver
-1000                                 ! maximum iteration numbers
 1.0e-1                               ! near patch distance (meter)
 42                                   ! number of gauss points for rcs
 1                                    ! 0: read ANSYS file;  1: read IDEA-s file
@@ -18,8 +16,3 @@
 0.0e+0	180.0e+0                     ! the_sta_degree and the_end_degree for near field observation point
 0.0e+0	0.0e+0                       ! phi_sta_degree and phi_end_degree for near field observation point
 361	1                            ! ntheta, and nphi for near field observation point
-600000                               ! unknowns more than this, use iterative solver; otherwise, direct solver
-1                                    ! verbose FMM output
-40                                   ! number of threads
-100                                  ! ncrit of FMM
-1                                    ! check direct

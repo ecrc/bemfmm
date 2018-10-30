@@ -15,9 +15,11 @@ static struct option long_options[] = {
   {"configfile",   required_argument, 0, 'i'},
   {"threads",      required_argument, 0, 't'},
   {"frequency",    required_argument, 0, 'q'},
+	{"precision",    required_argument, 0, 'e'},
   {"fmmverbose",   no_argument,       0, 'v'},
   {"writeoutput",  no_argument,       0, 'w'},
   {"ncrit",        required_argument, 0, 'c'}, 
+	{"restart",      required_argument, 0, 'r'}, 
   {"checkdirect",  no_argument,       0, 'd'},
   {"listbased",    no_argument,       0, 'l'},
   {"nspawn",       required_argument, 0, 's'},
@@ -32,25 +34,31 @@ public:
   int fmmverbose;
   int writeoutput;
   int ncrit;
+	int maxiter;
+  int gmresrestart;	
   int direct;
   int listbased;
   int nspawn;
   double frequency;
+	double precision;
 
 private:
   void usage(char * name) {
     fprintf(stderr,
             "Usage: %s [options]\n"
             "Long option (short option)     : Description (Default value)\n"
-            " --partitioning (-f)           : The FMM partitioning used (%s)\n"
+            " --partitioning (-p)[h/o/b/p]  : Hilbert, octsection, bisection, ParMETIS (%s)\n"
             " --geomfile (-f)               : The name of the file containing geometry (%s)\n"
             " --configfile (-i)             : The name of the file containing acoustics configration (%s)\n"
             " --threads (-t)                : Number of threads used in FMM traversal/tree building (%d)\n"
             " --frequency (-q)              : Single wave frequency  (%f)\n"            
-            " --fmmverbose (-v)             : Verbose FMM output (%d)\n"
-            " --writeoutput (-w)            : Write Acoustics output to files (%d)\n"
+						" --precision (-e)              : Iterative solver precision  (%f)\n"            
+            " --fmmverbose (-v)             : Verbose FMM timing output (%d)\n"
+            " --writeoutput (-w)            : Write results to files (%d)\n"
             " --ncrit (-c)                  : Number of bodies per leaf cell (FMM) (%d)\n"
-            " --direct (-d)                 : run direct kernel using N^2  (%d)\n"
+						" --maxiter (-m)                : Max number of GMRES iterations (%d)\n"
+						" --restart (-r)                : GMRES restart (%d)\n"
+            " --direct (-d)                 : Verify FMM against direct  (%d)\n"
             " --listbased (-l)              : use list-based traversal  (%d)\n"            
             " --nspawn (-s)                 : Threshold for stopping task creation during recursion  (%d)\n"
             " --help (-h)                   : Show this help document\n",     
@@ -59,10 +67,13 @@ private:
             geomfile.c_str(),
             configfile.c_str(),
             threads,
-	    frequency,
+						frequency,
+						precision,
             fmmverbose,
             writeoutput,
             ncrit, 
+						maxiter,
+						gmresrestart,
             direct, 
             listbased, 
             nspawn);
@@ -78,23 +89,35 @@ public:
     fmmverbose(0),
     writeoutput(0),
     ncrit(500),
+		maxiter(1000),
+		gmresrestart(30),
     direct(0), 
     listbased(0), 
     nspawn(1000), 
-    frequency(100){
+    frequency(100.0),
+		precision(1.0e-03){
     int cont = 1;
     opterr = 0;
     while (cont) {
       int option_index;
-      int c = getopt_long(argc, argv, "s:f:p:i:t:q:vdwlc:h", long_options, &option_index);
+      int c = getopt_long(argc, argv, "s:m:r:f:e:p:i:t:q:vdwlc:h", long_options, &option_index);
       if (c == -1) break;
       switch (c) {
       case 'c':
         ncrit = atoi(optarg);
         break;
+      case 'm':
+        maxiter = atoi(optarg);
+        break;				
+      case 'r':
+        gmresrestart = atoi(optarg);
+        break;				
       case 'q':
         frequency = atof(optarg);
         break;
+      case 'e':
+        precision = atof(optarg);
+        break;				
       case 't':
         threads = atoi(optarg);
         break; 

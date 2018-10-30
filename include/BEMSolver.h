@@ -489,7 +489,7 @@ namespace bemfmm {
       	for (int i = 0; i < out_size; ++i) {
       		wb[i] = ws[pointlocs[i]] * 0.5 / (4.0 * M_PI);
       	}
-      	my_gmres(out_size, ntriangle, nipp, comm_data.nitermax, comm_data.precis, crhs, rj, wb, meta_data, comm_data.fmmVerbose, patches, pointlocs, zzsparse, comm_data.mpirank);      
+      	my_gmres(out_size, ntriangle, nipp, comm_data.nitermax, comm_data.precis, crhs, rj, wb, meta_data, comm_data.fmmVerbose, comm_data.checkFMMDirect, comm_data.gmresRestart, patches, pointlocs, zzsparse, comm_data.mpirank);      
       	if(comm_data.writeTimingOutputs) {
       		printVecToFile(rj, rj.size(), "", create_process_file_name("c_solution_rj",comm_data.mpirank));
       	}
@@ -550,7 +550,7 @@ namespace bemfmm {
       	for (int i = 0; i < out_size; ++i) {
       		wb[i] = ws[pointlocs[i]] * 0.5 / (4.0 * M_PI);
       	}
-      	my_gmres(out_size, ntriangle, nipp, comm_data.nitermax, comm_data.precis, crhs, rj, wb, meta_data, comm_data.fmmVerbose, patches, pointlocs, zzsparse, comm_data.mpirank);      
+      	my_gmres(out_size, ntriangle, nipp, comm_data.nitermax, comm_data.precis, crhs, rj, wb, meta_data, comm_data.fmmVerbose, comm_data.checkFMMDirect, comm_data.gmresRestart, patches, pointlocs, zzsparse, comm_data.mpirank);      
       	if(comm_data.writeTimingOutputs) {
       		printVecToFile(rj, rj.size(), "", createProcessFile("iterative_solution_rj.dat",comm_data.mpirank));
       	}

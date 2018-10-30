@@ -50,13 +50,13 @@ int main(int argc, char** argv) {
   d_complex_t_vec rj = solver.computeSourceField(out_size, out_patches, out_pt_locs);
   alogger::stopTimer("Solving AX=B");    
   alogger::startTimer("Far Scattered Field");
-  solver.calculateScatteredField(FAR, out_size, comm_data.writeTimingOutputs, out_patches, out_pt_locs, "far_sca_soft");
+  solver.calculateScatteredField(FAR, out_size, comm_data.writeTimingOutputs, out_patches, out_pt_locs, "scatterd_field");
   alogger::stopTimer("Far Scattered Field");
   alogger::startTimer("Near Scattered Field - Far Scheme");
-  solver.calculateScatteredField(NEAR_FAR_SCHEME, out_size, comm_data.writeTimingOutputs, out_patches, out_pt_locs, "near_sca_soft_far_scheme");
+  solver.calculateScatteredField(NEAR_FAR_SCHEME, out_size, comm_data.writeTimingOutputs, out_patches, out_pt_locs, "near_field_scheme1");
   alogger::stopTimer("Near Scattered Field - Far Scheme");
   alogger::startTimer("Near Scatterd Field - Near Scheme");
-  solver.calculateScatteredField(NEAR_NEAR_SCHEME, out_size, comm_data.writeTimingOutputs, out_patches, out_pt_locs, "far_sca_soft_far_scheme");
+  solver.calculateScatteredField(NEAR_NEAR_SCHEME, out_size, comm_data.writeTimingOutputs, out_patches, out_pt_locs, "near_field_scheme2");
   alogger::stopTimer("Near Scatterd Field - Near Scheme");
   alogger::stopTimer("Total Time");
   alogger::resetTimer();

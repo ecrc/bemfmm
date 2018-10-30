@@ -1,6 +1,7 @@
 #ifndef SELF_METADATA
 #define SELF_METADATA
 #include "utils.h"
+#include "global_data.h"
 namespace bemfmm {
   class self_metadata { 
   public:

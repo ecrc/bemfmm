@@ -10,7 +10,6 @@
 #include <fstream>
 #include "fbind.h"
 #include "logger.h"
-#include "config.h"
 #include "args.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -324,8 +323,8 @@ namespace bemfmm {
       vc[2] = va[0] * vb[1] - va[1] * vb[0];   
     }
 
-    template<typename ArrT, typename T>
-    inline void dot_product(ArrT const& va, ArrT const& vb, T& vc, int dim = 3) {
+    template<typename Arr1, typename Arr2, typename T>
+    inline void dot_product(Arr1 const& va, Arr2 const& vb, T& vc, int dim = 3) {
       vc = va[0] * vb[0];
       for (int i = 1; i < dim; ++i)
         vc += va[i] * vb[i];

@@ -301,7 +301,7 @@ for (iterout = 0; iterout < nitermax; ++iterout) {
   itertotal++; 
   if(!init) {
     alogger::startTimer("FMM Time");
-    exafmm::FMM_B2B(ZDOUBLE_ADDRESS_OFF(cy[m]), ZDOUBLE_ADDRESS_OFF(cx), ZDOUBLE_ADDRESS_OFF(weights), fmm_verbose);      
+    exafmm::FMM_B2B(cy[m], cx, weights, fmm_verbose);      
     addSelfCorrections(cy[m], cx, nd, patches, self, ntriangle, nipp);
     alogger::stopResetTimer("FMM Time");        
   }
@@ -324,10 +324,10 @@ for (iterout = 0; iterout < nitermax; ++iterout) {
       alogger::startTimer("Iter Time");
       itertotal++;       
       alogger::startTimer("FMM Time");
-      exafmm::FMM_B2B(ZDOUBLE_ADDRESS_OFF(cy[n+1]), ZDOUBLE_ADDRESS_OFF(cy[n]), ZDOUBLE_ADDRESS_OFF(weights), fmm_verbose);                               
+      exafmm::FMM_B2B(cy[n+1], cy[n], weights, fmm_verbose);                               
       if(verify) {
 				alogger::stopTimer("Solving AX=B",0);
-				exafmm::DirectSample(sample_direct, ZDOUBLE_ADDRESS_OFF(test), sample_addresses);												 
+				exafmm::DirectSample(sample_direct, test, sample_addresses);												 
 				alogger::logNumericalError(test, cy[n+1], sample_addresses, sample_direct ,"FMM vs. Direct");
 				alogger::startTimer("Solving AX=B");
 			}
@@ -335,8 +335,8 @@ for (iterout = 0; iterout < nitermax; ++iterout) {
       alogger::stopResetTimer("FMM Time");        
       for (k = 0; k <= n; ++k) {
         dot_product(cy[k],cy[n+1],ch[n][k],nd);                             
-      }
-      MPI_Allreduce(ZDOUBLE_ADDRESS_OFF(ch[n]), ZDOUBLE_ADDRESS_OFF(chr), n+1,
+      }			
+      MPI_Allreduce((d_complex_t_ptr) &(ch[n][0]), (d_complex_t_ptr) &(chr[0]), n+1,
         MPI_DOUBLE_COMPLEX, MPI_SUM, MPI_COMM_WORLD);
       for (k = 0; k <= n; ++k) { 
         ch[n][k] = chr[k];

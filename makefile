@@ -33,8 +33,7 @@ FMM_FLGS =  -DEXAFMM_EXPANSION=$P \
             -DEXAFMM_COUNT_KERNEL \
             -DEXAFMM_USE_PARMETIS \
             -DEXAFMM_WITH_TBB \
-            -DUSE_FMM \
-            -DVERIFY_FMM1# \
+            -DUSE_FMM #\
             -DUSE_PART
 
 FMM_INCS = -Iinclude/fmm

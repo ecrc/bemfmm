@@ -15,4 +15,4 @@
 1.0e+0                               ! position of near field observation point
 0.0e+0	180.0e+0                     ! the_sta_degree and the_end_degree for near field observation point
 0.0e+0	0.0e+0                       ! phi_sta_degree and phi_end_degree for near field observation point
-361	1                            ! ntheta, and nphi for near field observation point
+361	1                                ! ntheta, and nphi for near field observation point

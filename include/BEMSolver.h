@@ -37,6 +37,7 @@ namespace bemfmm {
 		int** const& nsupan;
 		double** const& sunod;
 		int const& ntriangle;
+		int const& init_part_size;
 		int const& nnpt;
 		int const& nipp;
 		d_complex_t const& cjvk;
@@ -134,7 +135,7 @@ namespace bemfmm {
 	public:
 		BEMSolver(integral_data const& _int_data, common_data & _comm_data) 
 		: int_data(_int_data), comm_data(_comm_data), nsupan(comm_data.nsupan), 
-		sunod(comm_data.sunod), ntriangle(comm_data.ntriangle), nnpt(comm_data.nnpt), 
+		sunod(comm_data.sunod), ntriangle(comm_data.ntriangle), init_part_size(comm_data.init_part_size), nnpt(comm_data.nnpt), 
 		nipp(comm_data.nipp), cjvk(comm_data.cjvk), nearpd(comm_data.nearpd), 
 		nhdgqp(comm_data.nhdgqp), nlqp(comm_data.nlqp), mpirank(comm_data.mpirank), 
 		mpisize(comm_data.mpisize), alphao(int_data.alphao), betao(int_data.betao), gammao(int_data.gammao), 
@@ -487,10 +488,9 @@ namespace bemfmm {
       	alogger::stopTimer("Set Near Quad Points");
       	num_threads(comm_data.fmmAttributes.nthreads);
       	alogger::startTimer("FMM Initialization");
-      	FMM_Init2(eps2, comm_data.fmmAttributes, size, 
-      		DOUBLE_ADDRESS_OFF(xb), DOUBLE_ADDRESS_OFF(yb), DOUBLE_ADDRESS_OFF(zb),  
-      		DOUBLE_ADDRESS_OFF(comm_data.xt), DOUBLE_ADDRESS_OFF(comm_data.yt), DOUBLE_ADDRESS_OFF(comm_data.zt),  
-      		INT32_ADDRESS_OFF(patches), gaussPoints, comm_data.nhdgqp, ntriangle, nipp, 
+      	FMM_Init2(eps2, comm_data.fmmAttributes, size, xb, yb, zb,  
+      		comm_data.xt, comm_data.yt, comm_data.zt,  
+      		patches, gaussPoints, comm_data.nhdgqp, ntriangle, nipp, 
       		comm_data.nearpd, int_data.ws1, ipolator_near);
       	alogger::stopTimer("FMM Initialization");
 
@@ -508,7 +508,7 @@ namespace bemfmm {
       	}
       	my_gmres(out_size, ntriangle, nipp, comm_data.nitermax, comm_data.precis, crhs, rj, wb, meta_data, comm_data.fmmVerbose, comm_data.checkFMMDirect, comm_data.gmresRestart, patches, pointlocs, zzsparse, comm_data.mpirank);      
       	if(comm_data.writeTimingOutputs) {
-      		printVecToFile(rj, rj.size(), "", create_process_file_name("c_solution_rj",comm_data.mpirank));
+      		printVecToFile(rj, rj.size(), "", createProcessFile("iterative_solution_rj.dat",comm_data.mpirank));
       	}
       	return rj;
 #else 
@@ -551,9 +551,8 @@ namespace bemfmm {
       	alogger::stopTimer("Set Near Quad Points");
       	num_threads(comm_data.fmmAttributes.nthreads);
       	alogger::startTimer("FMM Initialization");
-      	FMM_Init(eps2, comm_data.fmmAttributes, size, 
-      		DOUBLE_ADDRESS_OFF(xb), DOUBLE_ADDRESS_OFF(yb), DOUBLE_ADDRESS_OFF(zb),  
-      		INT32_ADDRESS_OFF(patches), gaussPoints, comm_data.nhdgqp, ntriangle, nipp, 
+      	FMM_Init(eps2, comm_data.fmmAttributes, size, xb, yb, zb,  
+      		patches, gaussPoints, comm_data.nhdgqp, ntriangle, nipp, 
       		comm_data.nearpd, int_data.ws1, ipolator_near);
       	alogger::stopTimer("FMM Initialization");      
       	alogger::startTimer("FMM Partitioning");

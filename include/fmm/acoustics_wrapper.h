@@ -15,6 +15,7 @@
 
 
 namespace exafmm {
+	
   struct fmm_data {
     public:
       double kreal;
@@ -68,7 +69,7 @@ namespace exafmm {
   }
 
   void FMM_Init(double eps2, fmm_data fmmAttributes, 
-  			   int nb, double * xb, double * yb, double * zb, int* patchids, 
+  			   int nb, std::vector<double>& xb, std::vector<double>& yb, std::vector<double>& zb, std::vector<int>& patchids, 
                            std::vector<std::vector<double> > nearGaussPoints, int nhdgqp, int ntriangles_,
                            int nipp_, double nearpd, std::vector<double> ws, 
                            std::vector<std::vector<double> > ipolator_near) {
@@ -178,10 +179,11 @@ namespace exafmm {
   }
 
   void FMM_Init2(double eps2, fmm_data fmmAttributes, 
-  			   int nb, double * xb, double * yb, double * zb, double * xt, double * yt, double * zt, int* patchids, 
-                           std::vector<std::vector<double> > nearGaussPoints, int nhdgqp, int ntriangles_,
-                           int nipp_, double nearpd, std::vector<double> ws, 
-                           std::vector<std::vector<double> > ipolator_near) {
+  			   int nb, std::vector<double>& xb, std::vector<double>& yb, std::vector<double>& zb, 
+					 std::vector<double>& xt, std::vector<double>& yt, std::vector<double>& zt, std::vector<int>& patchids, 
+           std::vector<std::vector<double> > nearGaussPoints, int nhdgqp, int ntriangles_,
+           int nipp_, double nearpd, std::vector<double> ws, 
+           std::vector<std::vector<double> > ipolator_near) {
     int nspawn = fmmAttributes.tspawn;
     const int images = 0;
     const double theta = 0.4;
@@ -488,7 +490,7 @@ namespace exafmm {
     vcells = localTree->buildTree(vbodies, buffer, localBoundsV);
   }
 
-  void FMM_B2B(std::complex<double>* vi, std::complex<double>* vb, std::complex<double>* wb, bool verbose) { 
+  void FMM_B2B(std::vector<std::complex<double> >& vi, std::vector<std::complex<double> >const& vb, std::vector<std::complex<double> >const& wb, bool verbose) { 
     args->verbose = verbose;
     log_initialize();  
     for (B_iter B=bbodies.begin(); B!=bbodies.end(); B++) {
@@ -586,7 +588,7 @@ namespace exafmm {
     }
   }  
 
-  void DirectSample(int nb, std::complex<double>* vi, std::vector<int>& addresses) {
+  void DirectSample(int nb, std::vector<std::complex<double> >& vi, std::vector<int>& addresses) {
     Bodies ibodies(nb);
     Bodies jbodies(vbodies.begin(), vbodies.end());
     srand(time(NULL));

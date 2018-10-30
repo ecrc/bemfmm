@@ -15,7 +15,6 @@
    *
  **/
 
-
 #ifndef UTILS
 #define UTILS
 #include <complex>
@@ -41,13 +40,7 @@
 #include <assert.h>
 #include "fmm/logger.h"
 using namespace exafmm;
-
 #define ROUND_OFF(X,DIG) round(X*DIG)/DIG
-#define INT32_ADDRESS_OFF(X) (int32_t*) &X[0]
-#define INT16_ADDRESS_OFF(X) (int16_t*) &X[0]
-#define DOUBLE_ADDRESS_OFF(X) (double*) &X[0] 
-#define ZDOUBLE_ADDRESS_OFF(X) (std::complex<double>*) &X[0] 
-
 
 namespace bemfmm {
   const int dim = 3;

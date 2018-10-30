@@ -307,7 +307,7 @@ for (iterout = 0; iterout < nitermax; ++iterout) {
   }
   else init = false;  
   for (int i = 0; i < nd; ++i) cy[m][i]  = crhs[i] - cy[m][i];
-    cb[0] = scnrm22(nd,cy[m]);
+  cb[0] = scnrm22(nd,cy[m]);
   be = std::real(cb[0]/ay0);
   if(alogger::verbose) {
 		std::cout << std::setw(alogger::stringLength) << std::fixed << std::left

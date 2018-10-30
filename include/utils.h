@@ -1,3 +1,21 @@
+/**
+ *
+ * @file utils.h
+ *
+ * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
+ *                     All rights reserved.
+ **/
+/**
+   * @file utils.h   
+   *
+   *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
+   *
+   * @version 1.0.0
+   * @author Mustafa Abduljabbar & Mohammed Al Farhan
+   *
+ **/
+
+
 #ifndef UTILS
 #define UTILS
 #include <complex>
@@ -23,11 +41,6 @@
 #include <assert.h>
 #include "fmm/logger.h"
 using namespace exafmm;
-
-
-//#include <tbb/task_scheduler_init.h>
-//#include "petsc.h"
-
 
 #define ROUND_OFF(X,DIG) round(X*DIG)/DIG
 #define INT32_ADDRESS_OFF(X) (int32_t*) &X[0]

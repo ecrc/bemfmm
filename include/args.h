@@ -1,3 +1,20 @@
+/**
+ *
+ * @file args.h
+ *
+ * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
+ *                     All rights reserved.
+ **/
+/**
+   * @file args.h   
+   *
+   *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
+   *
+   * @version 1.0.0
+   * @author Mustafa Abduljabbar & Mohammed Al Farhan
+   *
+ **/
+
 #ifndef args_h
 #define args_h
 #include <cstdio>

@@ -1,3 +1,20 @@
+/**
+ *
+ * @file self_metadata.h
+ *
+ * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
+ *                     All rights reserved.
+ **/
+/**
+   * @file self_metadata.h   
+   *
+   *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
+   *
+   * @version 1.0.0
+   * @author Mustafa Abduljabbar & Mohammed Al Farhan
+   *
+ **/
+
 #ifndef SELF_METADATA
 #define SELF_METADATA
 #include "utils.h"
@@ -5,7 +22,7 @@
 namespace bemfmm {
   class self_metadata { 
   public:
-#if USE_PART || USE_MMAP
+#if USE_PART
     d_vector const& x;
     d_vector const& y;
     d_vector const& z;
@@ -23,7 +40,7 @@ namespace bemfmm {
     d_vector const& xxs;
     int const& nlqp;    
     
-#if USE_PART || USE_MMAP
+#if USE_PART
    self_metadata(d_vector const& _x, d_vector const& _y, d_vector const& _z, integral_data const& _int_data, 
       d_vector_2d const& _vcsio, d_complex_t const& _cjvk, double const* _ipolymatrix, int const& _nlqp) :
       x(_x), y(_y), z(_z), int_data(_int_data), vcsio(_vcsio), cjvk(_cjvk), 

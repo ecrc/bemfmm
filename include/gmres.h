@@ -1,3 +1,20 @@
+/**
+ *
+ * @file gmres.h
+ *
+ * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
+ *                     All rights reserved.
+ **/
+/**
+   * @file gmres.h   
+   *
+   *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
+   *
+   * @version 1.0.0
+   * @author Mustafa Abduljabbar & Mohammed Al Farhan
+   *
+ **/
+
 #ifndef GMRES
 #define GMRES
 #include "utils.h"

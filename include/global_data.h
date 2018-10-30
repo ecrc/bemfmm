@@ -6,13 +6,12 @@
  *                     All rights reserved.
  **/
 /**
-   * @file global_data.h
-   * @brief Cholesky Example
+   * @file global_data.h   
    *
    *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
    *
    * @version 1.0.0
-   * @author Mustafa Abduljabbar   
+   * @author Mustafa Abduljabbar & Mohammed Al Farhan
    *
  **/
 

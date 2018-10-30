@@ -488,14 +488,14 @@ namespace bemfmm {
         alogger::stopTimer("Set Near Quad Points");
         num_threads(comm_data.fmmAttributes.nthreads);
         alogger::startTimer("FMM Initialization");
-        FMM_Init2(eps2, comm_data.fmmAttributes, size, xb, yb, zb,  
+        FMM_Init(eps2, comm_data.fmmAttributes, size, xb, yb, zb,  
           comm_data.xt, comm_data.yt, comm_data.zt,  
           patches, gaussPoints, comm_data.nhdgqp, ntriangle, nipp, 
           comm_data.nearpd, int_data.ws1, ipolator_near);
         alogger::stopTimer("FMM Initialization");
 
         alogger::startTimer("FMM Partitioning");
-        FMM_Partition2(out_size, xb, yb, zb, comm_data.xt, comm_data.yt, comm_data.zt, patches, pointlocs);    
+        FMM_Partition(out_size, xb, yb, zb, comm_data.xt, comm_data.yt, comm_data.zt, patches, pointlocs);    
         alogger::stopTimer("FMM Partitioning");
         self_metadata meta_data(comm_data.xt, comm_data.yt, comm_data.zt, int_data, vcsio, comm_data.cjvk, ipolymatrix, comm_data.nlqp);
         alogger::startTimer("Set RHS");

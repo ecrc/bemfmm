@@ -32,11 +32,11 @@ static struct option long_options[] = {
   {"configfile",   required_argument, 0, 'i'},
   {"threads",      required_argument, 0, 't'},
   {"frequency",    required_argument, 0, 'q'},
-	{"precision",    required_argument, 0, 'e'},
+  {"precision",    required_argument, 0, 'e'},
   {"fmmverbose",   no_argument,       0, 'v'},
   {"writeoutput",  no_argument,       0, 'w'},
   {"ncrit",        required_argument, 0, 'c'}, 
-	{"restart",      required_argument, 0, 'r'}, 
+  {"restart",      required_argument, 0, 'r'}, 
   {"checkdirect",  no_argument,       0, 'd'},
   {"listbased",    no_argument,       0, 'l'},
   {"nspawn",       required_argument, 0, 's'},
@@ -51,13 +51,13 @@ public:
   int fmmverbose;
   int writeoutput;
   int ncrit;
-	int maxiter;
-  int gmresrestart;	
+  int maxiter;
+  int gmresrestart; 
   int direct;
   int listbased;
   int nspawn;
   double frequency;
-	double precision;
+  double precision;
 
 private:
   void usage(char * name) {
@@ -69,12 +69,12 @@ private:
             " --configfile (-i)             : The name of the file containing acoustics configration (%s)\n"
             " --threads (-t)                : Number of threads used in FMM traversal/tree building (%d)\n"
             " --frequency (-q)              : Single wave frequency  (%f)\n"            
-						" --precision (-e)              : Iterative solver precision  (%f)\n"            
+            " --precision (-e)              : Iterative solver precision  (%f)\n"            
             " --fmmverbose (-v)             : Verbose FMM timing output (%d)\n"
             " --writeoutput (-w)            : Write results to files (%d)\n"
             " --ncrit (-c)                  : Number of bodies per leaf cell (FMM) (%d)\n"
-						" --maxiter (-m)                : Max number of GMRES iterations (%d)\n"
-						" --restart (-r)                : GMRES restart (%d)\n"
+            " --maxiter (-m)                : Max number of GMRES iterations (%d)\n"
+            " --restart (-r)                : GMRES restart (%d)\n"
             " --direct (-d)                 : Verify FMM against direct  (%d)\n"
             " --listbased (-l)              : use list-based traversal  (%d)\n"            
             " --nspawn (-s)                 : Threshold for stopping task creation during recursion  (%d)\n"
@@ -84,13 +84,13 @@ private:
             geomfile.c_str(),
             configfile.c_str(),
             threads,
-						frequency,
-						precision,
+            frequency,
+            precision,
             fmmverbose,
             writeoutput,
             ncrit, 
-						maxiter,
-						gmresrestart,
+            maxiter,
+            gmresrestart,
             direct, 
             listbased, 
             nspawn);
@@ -106,13 +106,13 @@ public:
     fmmverbose(0),
     writeoutput(0),
     ncrit(500),
-		maxiter(1000),
-		gmresrestart(30),
+    maxiter(1000),
+    gmresrestart(30),
     direct(0), 
     listbased(0), 
     nspawn(1000), 
     frequency(100.0),
-		precision(1.0e-03){
+    precision(1.0e-03){
     int cont = 1;
     opterr = 0;
     while (cont) {
@@ -125,16 +125,16 @@ public:
         break;
       case 'm':
         maxiter = atoi(optarg);
-        break;				
+        break;        
       case 'r':
         gmresrestart = atoi(optarg);
-        break;				
+        break;        
       case 'q':
         frequency = atof(optarg);
         break;
       case 'e':
         precision = atof(optarg);
-        break;				
+        break;        
       case 't':
         threads = atoi(optarg);
         break; 

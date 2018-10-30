@@ -58,6 +58,7 @@ clean:
 	rm -f *.out
 	rm -f *.time
 	rm -f *.mod
+	rm -f *.dat
 	rm -f *.o.optdbg
 	rm -f *.bak
 	rm -f *~	

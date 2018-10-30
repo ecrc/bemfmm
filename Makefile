@@ -1,5 +1,5 @@
 
-all: clean bemfmm_test_mpi test_serial test_parallel
+all: clean bemfmm_test_mpi
 
 .SUFFIXES: .o .c .C .h .cxx .cpp
 .PHONY: clean all

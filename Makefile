@@ -58,12 +58,10 @@ bemfmm_test_mpi: $(OBJ)
 	$(CXX) $(FLGS) $(OBJ) $(LIBS) -o $@
 	$(RM) -f *.o
 
-run_parallel:
-	LD_LIBRARY_PATH=$(TBB_LIB_PATH)
-	${EXEC} -np 4 ./bemfmm_test_mpi -f geom/sphere/geo_mesh_3156.inp -wd -t 10 -c 500 -q 683.13 -p h -r 30 -m 1000
+test_parallel:
+	${EXEC} -n 4 ./bemfmm_test_mpi -f geom/sphere/geo_mesh_3156.inp -wd -t 10 -c 500 -q 683.13 -p h -r 30 -m 1000
 
 test_serial:
-	LD_LIBRARY_PATH=$(TBB_LIB_PATH)
 	${EXEC} -n 1 ./bemfmm_test_mpi -f geom/sphere/geo_mesh_156.inp -wd -t 10 -c 500 -q 683.13 -p h -r 30 -m 1000 
 
 clean:

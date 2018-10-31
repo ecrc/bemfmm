@@ -295,7 +295,7 @@ for (iterout = 0; iterout < nitermax; ++iterout) {
   itertotal++; 
   if(!init) {
     alogger::startTimer("FMM Time");
-    exafmm::FMM_B2B(cy[m], cx, weights, fmm_verbose);      
+    exafmm::FMM_MatVec(cy[m], cx, weights, fmm_verbose);      
     addSelfCorrections(cy[m], cx, nd, patches, self, ntriangle, nipp);
     alogger::stopResetTimer("FMM Time");        
   }
@@ -318,7 +318,7 @@ for (iterout = 0; iterout < nitermax; ++iterout) {
       alogger::startTimer("Iter Time");
       itertotal++;       
       alogger::startTimer("FMM Time");
-      exafmm::FMM_B2B(cy[n+1], cy[n], weights, fmm_verbose);                               
+      exafmm::FMM_MatVec(cy[n+1], cy[n], weights, fmm_verbose);                               
       if(verify) {
 				alogger::stopTimer("Solving AX=B",0);
 				exafmm::DirectSample(sample_direct, test, sample_addresses);												 

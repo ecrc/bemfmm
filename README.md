@@ -32,7 +32,7 @@ make all
 
 `make` should generate an executable binary file called: **bemfmm_test_mpi**. You can run it directly with `mpirun` executable command. Please provide your command-line arguments. To learn about all of the available command-line arguments supplemented in our solver code, use `--help`, which lists all of the available command-line arguments.
 
-## Running Test Cases ###
+### Running Test Cases ###
 
 To give you a flavor of the excepted outputs, you can use: `make test_serial`, for serial execution, or `make test_parallel`, for parallel execution. Note: You may need to add TBB library path to your **LD_LIBRARY_PATH**, before you run the executable. To do so, run the following bash command:
 
@@ -42,7 +42,28 @@ export LD_LIBRARY_PATH="TBB/lib:$LD_LIBRARY_PATH"
 
 The example herein assumes that you are using the TBB implementation provided with BEMFMM. Hence, you may want to replace `TBB/lib` with your TBB libray path.
 
-## Contact ###
+### Tested Architectures ###
+
+* Shaheen Supercomputer at KAUST -- Cray XC40
+  * GNU Programming Environment -- GCC version 7.2.0
+  * Cray MPICH version 7.7.0
+  * Used the repository provided library of TBB, ParMETIS, and LINPACK
+* Intel Skylake Scalable Processor Server
+  * Intel Parallel Studio 2018 Update 3
+  * Intel ICPC
+  * Intel MPI
+  * Intel MKL
+  * Intel TBB
+  * Used the repository provided library of ParMETIS
+* Intel Knights Landing Server
+  * Intel Parallel Studio 2018 Update 1
+  * Intel ICPC
+  * Intel MPI
+  * Intel MKL
+  * Intel TBB
+  * Used the repository provided library of ParMETIS
+
+### Contact ###
 
 * mustafa.abduljabbar@kaust.edu.sa
 * mohammed.farhan@kaust.edu.sa

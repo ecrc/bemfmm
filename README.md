@@ -34,7 +34,7 @@ make all
 
 ## Running a test case ###
 
-To give you a flavor of the excepted outputs, you can use: `make test_serial`, for serial execution, or `make test_parallel`, for parallel execution.
+To give you a flavor of the excepted outputs, you can use: `make test_serial`, for serial execution, or `make test_parallel`, for parallel execution. [Note: You may need to add TBB library path to your **LD_LIBRARY_PATH**, before you run the executable. To do so just do the following: `export LD_LIBRARY_PATH="TBB/lib:$LD_LIBRARY_PATH"`. The example herein assumes that you are using the TBB implementation provided with BEMFMM. Hence, you may want to replace `TBB/lib` with your TBB lib path.]
 
 ## Contact ###
 

@@ -32,17 +32,16 @@ FMM_FLGS += -DEXAFMM_COUNT_KERNEL
 FMM_FLGS += -DEXAFMM_USE_PARMETIS
 FMM_FLGS += -DEXAFMM_WITH_TBB
 FMM_FLGS += -DUSE_FMM
-FMM_FLGS += -DVERIFY_FMM1
 # FMM_FLGS += -DUSE_PART
 
 #### COMPILER ####
-CXX = CC
-# CXX = mpicxx
+# CXX = CC
+CXX = mpicxx
 # CXX = mpiicpc
 
 #### EXECUTION ####
-EXEC = srun
-# EXEC = mpirun
+# EXEC = srun
+EXEC = mpirun
 # EXEC = mpiexec
 
 #### ENVIRONMENT ###
@@ -55,5 +54,5 @@ ENV = GNU
 MODE = PRD
 
 #### DYNAMIC LINKING ####
-LINKING_TYPE = DYNAMIC
+# LINKING_TYPE = DYNAMIC
 # LINK_TYPE = STATIC

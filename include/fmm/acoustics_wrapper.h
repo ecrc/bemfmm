@@ -1,3 +1,14 @@
+/**
+ *
+ * @file acoustics_wrapper.h
+ *
+ * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
+ *                     All rights reserved.
+ *
+ * @author Mustafa Abduljabbar [mustafa.abduljabbar@kaust.edu.sa] and Mohammed Al Farhan [mohammed.farhan@kaust.edu.sa].
+ *
+ **/
+
 #ifndef ACOUSTICS_WRAPPER
 #define ACOUSTICS_WRAPPER
 

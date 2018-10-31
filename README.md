@@ -1,4 +1,4 @@
-# BEMFMM [![GitHub version](https://badge.fury.io/gh/ecrc%2FBEMFMM.svg)](https://badge.fury.io/gh/ecrc%2FBEMFMM) #
+# BEMFMM [![GitHub version](https://badge.fury.io/gh/ecrc%2FBEMFMM.svg)](https://badge.fury.io/gh/ecrc%2FBEMFMM) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) #
 
  https://ecrc.github.io/BEMFMM/
 
@@ -91,4 +91,4 @@ The example herein assumes that you are using the TBB implementation provided wi
 
 ## License ###
 
-MIT License [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+MIT License

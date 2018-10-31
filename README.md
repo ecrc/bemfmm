@@ -1,4 +1,4 @@
-# README #
+# README # [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 ### What is this repository for? ###
 

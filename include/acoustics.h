@@ -697,7 +697,6 @@ namespace exafmm {
       vi[B->IBODY] = B->TRG[0];
     }
   }
-
 }
 
 #endif

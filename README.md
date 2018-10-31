@@ -47,21 +47,21 @@ The example herein assumes that you are using the TBB implementation provided wi
 * Shaheen Supercomputer at KAUST -- Cray XC40
   * GNU Programming Environment -- GCC version 7.2.0
   * Cray MPICH version 7.7.0
-  * Used the repository provided library of TBB, ParMETIS, and LINPACK
+  * Used the repository provided library for TBB, ParMETIS, and LINPACK
 * Intel Skylake Scalable Processor Server
   * Intel Parallel Studio 2018 Update 3
   * Intel ICPC
   * Intel MPI
   * Intel MKL
   * Intel TBB
-  * Used the repository provided library of ParMETIS
+  * Used the repository provided library for ParMETIS
 * Intel Knights Landing Server
   * Intel Parallel Studio 2018 Update 1
   * Intel ICPC
   * Intel MPI
   * Intel MKL
   * Intel TBB
-  * Used the repository provided library of ParMETIS
+  * Used the repository provided library for ParMETIS
 
 ### Contact ###
 

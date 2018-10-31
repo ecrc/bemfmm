@@ -1,30 +1,42 @@
-# README #
+# BEMFMM #
 
-### What is this repository for? ###
+An extreme-scale Fast Multipole Method (FMM)-accelerated Boundary Integral Equation (BIE) solver for wave scattering. The solver name stands for Boundary Element Method (BEM) combined with FMM (BEMFMM). The application code calculates scattered field due to an excitation source at a specific point in space or infinity. The Krylov subspace liner solver is featured by GMRES iterative method, inside which FMM is used to implement the Matrix-Vector multiplication (MatVec) kernel. The solver is highly optimized for both shared- and distributed-memory architectures, and support optimal architecture-specific and algorithm-aware partitioning, load balancing, and communication reducing mechanisms. The solver code utilizes two state-of-the-art FMM implementation for oscillatory kernels, namely *ExaFMM* and *FMMLIB3D*. Followings are two diagrams that depict the underlying implementation of the solver code.
 
-This repository is a large-scale FMM-based Boundary Element Solver that calculates scattered field due to an exciation source at a specific point in space or infinity. 
+![Image of BEMFMM workflow](https://github.com/ecrc/BEMFMM/blob/master/img/workflow.png)
 
+![Image of the implemented FMM](https://github.com/ecrc/BEMFMM/blob/master/img/fmmG.png)
 
-### Version ###
-1.0
+### Requirements ###
 
-### Prerequisites ###
-You need at least a Fortran 90 Compiler, libraries needed for now are as follows:
+* C/C++ Compiler (e.g., GNU Compiler -- https://www.gnu.org/software/gcc/)
+* MPI  (e.g., MPICH -- http://www.mpich.org/)
+* LAPACK (e.g., NETLIB LAPACK -- http://www.netlib.org/lapack/)
+* Intel TBB (https://www.threadingbuildingblocks.org/)
+* ParMETIS (http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)
 
-- MPI >= 2.0 e.g. OpenMPI, MPICH
+The repository includes LAPACK, TBB, and ParMETIS. Therefore, you may not need to install yours, you can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
 
-- Lapack and Blas
+* C/C++ Compiler (e.g., GNU Compiler -- https://www.gnu.org/software/gcc/)
+* MPI  (e.g., MPICH -- http://www.mpich.org/)
 
-- Intel TBB
+Please have these two dependencies configured and installed on your system before running the solver code.
 
-- ParMetis
+### Compiling and Linking ###
 
+Edit make.inc file to include all of your installed dependencies. The default ones are set to GNU GCC compiler with MPICH. If you have these two configured and installed on your system, then you may not need to edit the make.inc file. Anything that you do not want to include in the make, just comment it out in the make.inc. The Makefile, on the other hand, is dynamic, therefore, you do not need to change it. All of your changes must be directed to the make.inc file only. Even if you want to add additional compiler's flags, use **USERCXXFLAGS** variable in the make.inc to include all of your flags. Once you edit the make.inc file, you can just do:
+
+```bash
+make clean
+make all
+```
+
+`make` should generate an executable binary file called: **bemfmm_test_mpi**. You can run it directly with `mpirun` executable command. Please provide your command-line arguments. To learn about all of the available command-line arguments supplemented in our solver code, use `--help`, which lists all of the available command-line arguments.
 
 ## Running a test case ###
-After you have installed the required libraries, do
 
-make clean
+To give you a flavor of the excepted outputs, you can use: `make test_serial`, for serial execution, or `make test_parallel`, for parallel execution.
 
-make 
+## Contact ###
 
-
+* mustafa.abduljabbar@kaust.edu.sa
+* mohammed.farhan@kaust.edu.sa

@@ -28,6 +28,7 @@ static struct option long_options[] = {
   {"frequency",    required_argument, 0, 'q'},
   {"precision",    required_argument, 0, 'e'},
   {"fmmverbose",   no_argument,       0, 'v'},
+  {"help",         no_argument,       0, 'h'},
   {"writeoutput",  no_argument,       0, 'w'},
   {"ncrit",        required_argument, 0, 'c'}, 
   {"restart",      required_argument, 0, 'r'}, 

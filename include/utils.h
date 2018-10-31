@@ -4,15 +4,9 @@
  *
  * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
  *                     All rights reserved.
- **/
-/**
-   * @file utils.h   
-   *
-   *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
-   *
-   * @version 1.0.0
-   * @author Mustafa Abduljabbar & Mohammed Al Farhan
-   *
+ *
+ * @author Mustafa Abduljabbar [mustafa.abduljabbar@kaust.edu.sa] and Mohammed Al Farhan [mohammed.farhan@kaust.edu.sa].
+ *
  **/
 
 #ifndef UTILS
@@ -416,4 +410,5 @@ namespace bemfmm {
 
   }
 }
+
 #endif

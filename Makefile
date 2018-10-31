@@ -5,18 +5,6 @@ all: clean bemfmm_test_mpi
 
 include make.inc
 
-# METIS
-METIS_LIBS = -L${METIS_LIB_PATH} -lparmetis -lmetis
-METIS_INCS = -I${METIS_INC_PATH}
-
-# TBB
-TBB_LIBS = -L${TBB_LIB_PATH} -ltbb
-TBB_INCS = -I${TBB_INC_PATH}
-
-# LAPACK
-LAPACK_LIBS = -L${LAPACK_LIB_PATH} -llapack -lrefblas -lgfortran -lm
-BLAS_LIBS = -L${BLAS_LIB_PATH} -lrefblas
-
 # Core
 LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS} ${USERLIBS} ${BLAS_LIBS}
 INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${USERINCS}

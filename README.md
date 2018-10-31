@@ -63,6 +63,10 @@ The example herein assumes that you are using the TBB implementation provided wi
   * Intel TBB
   * Used the repository provided library for ParMETIS
 
+### Control Parameters ###
+
+![Image of the Control Parameters](https://github.com/ecrc/BEMFMM/blob/master/img/parameters.png)
+
 ### Contact ###
 
 * mustafa.abduljabbar@kaust.edu.sa

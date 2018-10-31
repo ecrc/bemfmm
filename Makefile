@@ -6,7 +6,7 @@ all: clean bemfmm_test_mpi
 include make.inc
 
 # Core
-LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS} ${USERLIBS} ${BLAS_LIBS}
+LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS} ${USERLIBS} ${BLAS_LIBS} ${BLAS_LAPACK_EXTRA}
 INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${USERINCS}
 FLGS = ${INCS} ${FMM_FLGS}
 

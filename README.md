@@ -12,18 +12,18 @@
 
 ## Requirements ##
 
-* C/C++ Compiler (e.g., **GNU Compiler** -- https://www.gnu.org/software/gcc/)
+* C/C++ Compiler (e.g., **GNU C/C++ Compiler** -- https://www.gnu.org/software/gcc/)
 * MPI  (e.g., **MPICH** -- http://www.mpich.org/)
 * LAPACK (e.g., **NETLIB LAPACK** -- http://www.netlib.org/lapack/)
 * Intel TBB (https://www.threadingbuildingblocks.org/)
 * ParMETIS (http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)
-* FORTRAN Compiler (e.g., **GNU FORTRAN** -- https://gcc.gnu.org/fortran/)[Note: You need a working FORTRAN compiler to be able to use LAPACK and BLAS. However, this requirements is not necessarily if you use the C implementation of **LAPACK** and **BLAS**. In addition, BLAS comes with LAPACK but you may need to install it separately. The current included archive of **LAPACK** and **BLAS** use FORTRAN compiler. As such, if you are going to use the provided installation, then please make sure that your system has a working FORTRAN compiler.]
+* FORTRAN Compiler (e.g., **GNU FORTRAN Compiler** -- https://gcc.gnu.org/fortran/)[Note: You need a working **FORTRAN** compiler to be able to use LAPACK and BLAS. However, this requirements is not necessarily if you use the **C** implementation of **LAPACK** and **BLAS**. In addition, **BLAS** comes with **LAPACK** but you may need to install it separately. The current included archive of **LAPACK** and **BLAS** use FORTRAN compiler. As such, if you are going to use the provided installation, then please make sure that your system has a working **FORTRAN** compiler.]
 
 The repository includes **LAPACK**, **TBB**, and **ParMETIS**. Therefore, you may not need to install yours, you can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
 
-* C/C++ Compiler (e.g., **GNU Compiler** -- https://www.gnu.org/software/gcc/)
+* C/C++ Compiler (e.g., **GNU C/C++ Compiler** -- https://www.gnu.org/software/gcc/)
 * MPI (e.g., **MPICH** -- http://www.mpich.org/)
-* FORTRAN Compiler (e.g., **GNU FORTRAN** -- https://gcc.gnu.org/fortran/)
+* FORTRAN Compiler (e.g., **GNU FORTRAN Compiler** -- https://gcc.gnu.org/fortran/)
 
 Please have these two dependencies configured and installed on your system before running the solver code.
 

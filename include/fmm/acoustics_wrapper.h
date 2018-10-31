@@ -547,7 +547,7 @@ namespace exafmm {
    * @param wb source weights (input)
    * @param verbose output verbosity (input)
   */  
-  void FMM_B2B(std::vector<std::complex<double> >& vi, std::vector<std::complex<double> >const& vb, std::vector<std::complex<double> >const& wb, bool verbose) { 
+  void FMM_MatVec(std::vector<std::complex<double> >& vi, std::vector<std::complex<double> >const& vb, std::vector<std::complex<double> >const& wb, bool verbose) { 
     args->verbose = verbose;
     log_initialize();  
     for (B_iter B=bbodies.begin(); B!=bbodies.end(); B++) {

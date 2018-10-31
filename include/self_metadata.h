@@ -1,4 +1,3 @@
-
 /**
  *
  * @file self_metadata.h

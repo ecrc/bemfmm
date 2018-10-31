@@ -11,10 +11,11 @@
 
 #ifndef BEMSOLVER
 #define BEMSOLVER
+
 #include "utils.h"
 #include "fbind.h"
 #include "gmres.h"
-#include "fmm/acoustics_wrapper.h"
+#include "acoustics.h"
 #include <fstream>
 #include "global_data.h"
 

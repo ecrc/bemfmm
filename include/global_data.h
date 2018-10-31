@@ -11,12 +11,13 @@
 
 #ifndef GLOBAL_DATA
 #define GLOBAL_DATA
+
 #include <assert.h>
 #include <fstream>
 #include <sstream>
 #include "logger.h"
 #include "utils.h"
-#include "acoustics_wrapper.h"
+#include "acoustics.h"
 
 namespace bemfmm {
   //!  common_data class

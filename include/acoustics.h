@@ -1,6 +1,6 @@
 /**
  *
- * @file acoustics_wrapper.h
+ * @file acoustics.h
  *
  * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
  *                     All rights reserved.
@@ -9,11 +9,11 @@
  *
  **/
 
-#ifndef ACOUSTICS_WRAPPER
-#define ACOUSTICS_WRAPPER
+#ifndef ACOUSTICS
+#define ACOUSTICS
 
 #include "base_mpi.h"
-#include "args.h"
+#include "fmm/args.h"
 #include "bound_box.h"
 #include "build_tree.h"
 #include "logger.h"
@@ -22,6 +22,7 @@
 #include "tree_mpi.h"
 #include "up_down_pass.h"
 #include <fstream>
+
 namespace exafmm {
   struct fmm_data {
     public:

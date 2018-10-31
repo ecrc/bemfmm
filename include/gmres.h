@@ -11,8 +11,9 @@
 
 #ifndef GMRES
 #define GMRES
+
 #include "utils.h"
-#include "fmm/acoustics_wrapper.h"
+#include "acoustics.h"
 #include "self_metadata.h"
 
 using namespace bemfmm;

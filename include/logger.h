@@ -4,16 +4,11 @@
  *
  * @copyright 2018 King Abdullah University of Science and Technology (KAUST).
  *                     All rights reserved.
+ *
+ * @author Mustafa Abduljabbar [mustafa.abduljabbar@kaust.edu.sa] and Mohammed Al Farhan [mohammed.farhan@kaust.edu.sa].
+ *
  **/
-/**
-   * @file logger.h   
-   *
-   *  BEMFMM is a software package provided by King Abdullah University of Science and Technology (KAUST)
-   *
-   * @version 1.0.0
-   * @author Mustafa Abduljabbar & Mohammed Al Farhan
-   *
- **/
+
 #ifndef logger_h
 #define logger_h
 #include <cmath>
@@ -221,4 +216,5 @@ namespace bemfmm {
 
   };
 }
+
 #endif

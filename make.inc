@@ -13,8 +13,8 @@ TBB_LIB_PATH = ${TBB_PATH}/lib/
 TBB_INC_PATH = ${TBB_PATH}/inc/
 
 #### LAPACK ####
-LAPACK_PATH = /scratch/farhanma/lib-dev/lapack-3.8.0
-LAPACK_LIB_PATH = ${LAPACK_PATH}/
+LAPACK_PATH = LAPACK
+LAPACK_LIB_PATH = ${LAPACK_PATH}/lib/
 
 #### BLAS ####
 ENABLE_BLAS = FALSE

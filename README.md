@@ -50,20 +50,31 @@ The example herein assumes that you are using the TBB implementation provided wi
   * GNU Programming Environment -- GCC version 7.2.0
   * Cray MPICH version 7.7.0
   * Used the repository provided library for TBB, ParMETIS, and LINPACK
-* Intel Skylake Scalable Processor Server
+* Intel Skylake Scalable Processor Server [56 Cores (dual-socket)]
   * Intel Parallel Studio 2018 Update 3
   * Intel ICPC
   * Intel MPI
   * Intel MKL
   * Intel TBB
   * Used the repository provided library for ParMETIS
-* Intel Knights Landing Server
+* Intel Knights Landing Server [72 Cores and 64 Cores]
   * Intel Parallel Studio 2018 Update 1
   * Intel ICPC
   * Intel MPI
   * Intel MKL
   * Intel TBB
   * Used the repository provided library for ParMETIS
+* Intel Haswell Server [36 Cores (dual-socket)]
+  * Intel Parallel Studio 2018 Update 3
+  * Intel ICPC
+  * Intel MPI
+  * Intel MKL
+  * Intel TBB
+  * Used the repository provided library for ParMETIS
+* Intel IvyBridge Server [20 Cores (dual-socket)]
+  * GNU GCC version 7.3.0
+  * MPICH version 3.2
+  * Used the repository provided library for TBB, ParMETIS, and LINPACK
 
 ### Control Parameters ###
 

@@ -77,6 +77,10 @@ The example herein assumes that you are using the TBB implementation provided wi
   * GNU GCC version 7.3.0
   * MPICH version 3.2
   * Used the repository provided library for TBB, ParMETIS, and LINPACK
+* AMD EPYC Server [16 Cores (quad-socket)]
+  * GNU GCC version 8.1.0
+  * MPICH version 3.2
+  * Used the repository provided library for TBB, ParMETIS, and LINPACK
 
 ## Control Parameters ##
 

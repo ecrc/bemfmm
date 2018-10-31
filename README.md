@@ -2,11 +2,15 @@
 
  https://ecrc.github.io/BEMFMM/
 
-**BEMFMM** is an extreme-scale Fast Multipole Method (FMM)-accelerated Boundary Element Method (BEM) solver for wave scattering. It calculates the scattered field due to an excitation source at a specific point in space or infinity. The Krylov subspace liner solver is featured by GMRES iterative method, inside which FMM accelerates the Matrix-Vector multiplication. The solver is highly optimized for both shared- and distributed-memory architectures. It features optimal architecture-specific and algorithm-aware partitioning, load balancing, and communication reducing mechanisms. The solver code utilizes two state-of-the-art FMM implementation for oscillatory kernels, namely *ExaFMM* and *FMMLIB3D*. Followings are two diagrams that depict the underlying implementation of the solver code.
+**BEMFMM** is an extreme-scale Fast Multipole Method (FMM)-accelerated Boundary Element Method (BEM) solver for wave scattering. It calculates the scattered field due to an excitation source at a specific point in space or infinity. The Krylov subspace liner solver is featured by GMRES iterative method, inside which FMM accelerates the Matrix-Vector multiplication. The solver is highly optimized for both shared- and distributed-memory architectures. It features optimal architecture-specific and algorithm-aware partitioning, load balancing, and communication reducing mechanisms. The solver code utilizes two state-of-the-art FMM implementation for oscillatory kernels, namely *ExaFMM* and *FMMLIB3D*.
 
-![Image of BEMFMM workflow](img/workflow.png)
+### The Underlying FMM Implementation ###
 
 ![Image of the implemented FMM](img/fmmG.png)
+
+### Workflow ###
+
+![Image of BEMFMM workflow](img/workflow.png)
 
 ### Requirements ###
 

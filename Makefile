@@ -1,4 +1,3 @@
-
 all: clean bemfmm_test_mpi
 
 .SUFFIXES: .o .c .C .h .cxx .cpp

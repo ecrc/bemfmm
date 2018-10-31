@@ -32,7 +32,7 @@ make clean
 make all
 ```
 
-`make` should generate an executable binary file called: **bemfmm_test_mpi**. You can run it directly with `mpirun` executable command. Please provide your command-line arguments. To learn about all of the available command-line arguments supplemented in our solver code, use `--help`, which lists all of the available command-line arguments.
+`make` should generate an executable binary file called: **bemfmm_test_mpi**. You can run it directly with `mpirun` executable command. Please provide your command-line arguments. To learn about all of the available command-line arguments supplemented in our solver code, use `-h`, which lists all of the available command-line arguments.
 
 ### Running Test Cases ###
 

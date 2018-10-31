@@ -15,18 +15,11 @@ TBB_LIBS = -L${TBB_LIB_PATH} -ltbb
 TBB_INCS = -I${TBB_INC_PATH}
 
 # LAPACK
-LAPACK_LIBS = -L${LAPACK_LIB_PATH} -llapack -lm
-
-# BLAS
-ifeq ($(ENABLE_BLAS), TRUE)
-	BLAS_LIBS = -L${BLAS_LIB_PATH} -lblas
-endif
+LAPACK_LIBS = -L${LAPACK_LIB_PATH} -llapack -lrefblas -lgfortran -lm
+BLAS_LIBS = -L${BLAS_LIB_PATH} -lrefblas
 
 # Core
-LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS} ${USERLIBS}
-ifeq ($(ENABLE_BLAS), TRUE)
-	LIBS += -L${BLAS_LIB_PATH} -lblas
-endif
+LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS} ${USERLIBS} ${BLAS_LIBS}
 INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${USERINCS}
 FLGS = ${INCS} ${FMM_FLGS}
 

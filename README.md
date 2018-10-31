@@ -14,18 +14,29 @@ An extreme-scale Fast Multipole Method (FMM)-accelerated Boundary Integral Equat
 * Intel TBB (https://www.threadingbuildingblocks.org/)
 * ParMETIS (http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)
 
-The repository includes LAPACK, TBB, and ParMETIS. Therefore, you may not need to install yours, use can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, then you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
+The repository includes LAPACK, TBB, and ParMETIS. Therefore, you may not need to install yours, you can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
 
 * C/C++ Compiler (e.g., GNU Compiler -- https://www.gnu.org/software/gcc/)
 * MPI  (e.g., MPICH -- http://www.mpich.org/)
 
 Please have these two dependencies configured and installed on your system before running the solver code.
 
-## Running a test case ###
-After you have installed the required libraries, do
+### Compiling and Linking ###
 
+Edit make.inc file to include all of your installed dependencies. The default ones are set to GNU GCC compiler with MPICH. If you have these two configured and installed on your system, then you may not need to edit the make.inc file. Anything that you do not want to include in the make, just comment it out in the make.inc. The Makefile, on the other hand, is dynamic, therefore, you do not need to change it. All of your changes must be directed to the make.inc file only. Even if you want to add additional compiler's flags, use **USERCXXFLAGS** variable in the make.inc to include all of your flags. Once you edit the make.inc file, you can just do:
+
+```bash
 make clean
+make all
+```
 
-make 
+`make` should generate an executable binary file called: **bemfmm_test_mpi**. You can run it directly with `mpirun` executable command. Please provide your command-line arguments. To learn about all of the available command-line arguments supplemented in our solver code, use `--help`, which lists all of the available command-line arguments.
 
+## Running a test case ###
 
+To give you a flavor of the excepted outputs, you can use: `make test_serial`, for serial execution, or `make test_parallel`, for parallel execution.
+
+## Contact ###
+
+* mustafa.abduljabbar@kaust.edu.sa
+* mohammed.farhan@kaust.edu.sa

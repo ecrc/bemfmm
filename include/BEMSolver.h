@@ -586,4 +586,5 @@ namespace bemfmm {
 #endif
     };
 } // end namespace bemfmm
+
 #endif

@@ -23,11 +23,11 @@ ifeq ($(ENABLE_BLAS), TRUE)
 endif
 
 # Core
-LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS}
+LIBS = ${METIS_LIBS} ${TBB_LIBS} ${LAPACK_LIBS} ${USERLIBS}
 ifeq ($(ENABLE_BLAS), TRUE)
 	LIBS += -L${BLAS_LIB_PATH} -lblas
 endif
-INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS}
+INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${USERINCS}
 FLGS = ${INCS} ${FMM_FLGS}
 
 ifeq ($(MODE), DEV)

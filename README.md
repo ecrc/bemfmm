@@ -8,16 +8,16 @@ An extreme-scale Fast Multipole Method (FMM)-accelerated Boundary Integral Equat
 
 ### Requirements ###
 
-* C/C++ Compiler (e.g., GNU Compiler -- https://www.gnu.org/software/gcc/)
-* MPI  (e.g., MPICH -- http://www.mpich.org/)
-* LAPACK (e.g., NETLIB LAPACK -- http://www.netlib.org/lapack/)
+* C/C++ Compiler (e.g., **GNU Compiler** -- https://www.gnu.org/software/gcc/)
+* MPI  (e.g., **MPICH** -- http://www.mpich.org/)
+* LAPACK (e.g., **NETLIB LAPACK** -- http://www.netlib.org/lapack/)
 * Intel TBB (https://www.threadingbuildingblocks.org/)
 * ParMETIS (http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)
 
-The repository includes LAPACK, TBB, and ParMETIS. Therefore, you may not need to install yours, you can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
+The repository includes **LAPACK**, **TBB**, and **ParMETIS**. Therefore, you may not need to install yours, you can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
 
-* C/C++ Compiler (e.g., GNU Compiler -- https://www.gnu.org/software/gcc/)
-* MPI  (e.g., MPICH -- http://www.mpich.org/)
+* C/C++ Compiler (e.g., **GNU Compiler** -- https://www.gnu.org/software/gcc/)
+* MPI  (e.g., **MPICH** -- http://www.mpich.org/)
 
 Please have these two dependencies configured and installed on your system before running the solver code.
 

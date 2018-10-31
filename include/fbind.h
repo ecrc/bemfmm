@@ -26,4 +26,5 @@ namespace bemfmm {
 #endif
     }
 }
+
 #endif

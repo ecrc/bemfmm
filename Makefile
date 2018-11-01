@@ -11,9 +11,9 @@ INCS = -Iinclude/fmm -Iinclude/ ${METIS_INCS} ${TBB_INCS} ${USERINCS}
 FLGS = ${INCS} ${FMM_FLGS}
 
 ifeq ($(MODE), DEV)
-  FLGS += -g
+	FLGS += -g
 else
-  FLGS += -O3 -mavx
+	FLGS += -O3 -mavx
 endif
 
 ifeq ($(LINKING_TYPE), DYNAMIC)

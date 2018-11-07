@@ -98,10 +98,6 @@ The example herein assumes that you are using the TBB implementation provided wi
 * mustafa.abduljabbar@kaust.edu.sa
 * mohammed.farhan@kaust.edu.sa
 
-## Website ##
-
-https://ecrc.github.io/BEMFMM/
-
 ## License ###
 
 MIT License

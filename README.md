@@ -101,3 +101,16 @@ The example herein assumes that you are using the TBB implementation provided wi
 ## License ###
 
 MIT License
+
+## Acknowledgments ##
+
+Support in the form of computing resources was provided by KAUST Extreme Computing Research Center, KAUST Supercomputing Laboratory, KAUST Information Technology Research Division, Intel Parallel Computing Centers, and Cray Supercomputing Center of Excellence. In particular, the authors are very appreciative to Bilel Hadri of KAUST Supercomputer Laboratory for his great help and support throughout scalability experiments n the Shaheen supercomputer.
+
+## References ##
+
+* M. Abduljabbar, M. Al Farhan, N. Al-Harthi, R. Chen, R. Yokota, H. Bagci, and D. Keyes, *Extreme Scale FMM-Accelerated Boundary Integral Equation Solver for Wave Scattering*, submitted to SIAM Journal of Scientific Computing (SISC), 2018 [under review].
+* M. Abduljabbar, M. Al Farhan, R. Yokota, and D. Keyes, *Performance Evaluation of Computation and Communication Kernels of the Fast Multipole Method on Intel Manycore Architecture*, vol. 10417 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 553–564.
+* M. Abduljabbar, G. S. Markomanolis, H. Ibeid, R. Yokota, and D. Keyes, *Communication Reducing Algorithms for Distributed Hierarchical N-Body Problems with Boundary Distributions*, vol. 10266 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 79–96.
+* M. Abduljabbar and R. Yokota, *N-body methods*, in High Performance Parallelism Pearls, Morgan Kaufmann - Elsevier, Burlington MA, 2015, ch. 10.
+* M. Zandifar, M. Abdul Jabbar, A. Majidi, D. Keyes, N. M. Amato, and L. Rauchwerger, *Composing algorithmic skeletons to express high-performance scientific applications*, in Proceedings of the 29th ACM on International Conference on Supercomputing, ICS '15, New York, NY, USA, 2015, ACM, pp. 415–424.
+* M. Abduljabbar, R. Yokota, and D. Keyes, *Asynchronous Execution of the Fast Multipole Method Using Charm++*, vol. abs/1405.7487 of CoRR, arXiv, 1405.7487, 2014, http://arxiv.org/abs/1405.7487.

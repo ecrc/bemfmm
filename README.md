@@ -52,7 +52,7 @@ The example herein assumes that you are using the TBB implementation provided wi
 
 ## Tested Architectures ##
 
-Here is a list of the systems in which we ran BEMFMM: [Note: For additional information, please read the [supplementary martial] document (docs/sisc_sub_20181111.pdf)]
+Here is a list of the systems in which we ran BEMFMM: [Note: For additional information, please read the [supplementary martial](docs/sisc_sub_20181111.pdf) document.]
 
 * Shaheen Supercomputer at KAUST -- Cray XC40
   * GNU Programming Environment -- GCC and GFORTRAN version 7.2.0
@@ -112,7 +112,7 @@ Support in the form of computing resources was provided by KAUST Extreme Computi
 
 ## Papers ##
 
-* M. Abduljabbar, M. Al Farhan, N. Al-Harthi, R. Chen, R. Yokota, H. Bagci, and D. Keyes, *Extreme Scale FMM-Accelerated Boundary Integral Equation Solver for Wave Scattering*, submitted to SIAM Journal of Scientific Computing (SISC), 2018, arXiv: https://arxiv.org/abs/1803.09948. [Supplementary Material.](docs/sisc_sub_20181111.pdf).
+* M. Abduljabbar, M. Al Farhan, N. Al-Harthi, R. Chen, R. Yokota, H. Bagci, and D. Keyes, *Extreme Scale FMM-Accelerated Boundary Integral Equation Solver for Wave Scattering*, submitted to SIAM Journal of Scientific Computing (SISC), 2018, arXiv: https://arxiv.org/abs/1803.09948. [Supplementary Material](docs/sisc_sub_20181111.pdf).
 * M. Abduljabbar, M. Al Farhan, R. Yokota, and D. Keyes, *Performance Evaluation of Computation and Communication Kernels of the Fast Multipole Method on Intel Manycore Architecture*, vol. 10417 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 553–564.
 * M. Abduljabbar, G. S. Markomanolis, H. Ibeid, R. Yokota, and D. Keyes, *Communication Reducing Algorithms for Distributed Hierarchical N-Body Problems with Boundary Distributions*, vol. 10266 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 79–96.
 * M. Abduljabbar and R. Yokota, *N-body methods*, in High Performance Parallelism Pearls, Morgan Kaufmann - Elsevier, Burlington MA, 2015, ch. 10.

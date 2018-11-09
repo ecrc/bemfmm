@@ -17,15 +17,17 @@
 * LAPACK (e.g., **NETLIB LAPACK** -- http://www.netlib.org/lapack/)
 * Intel TBB (https://www.threadingbuildingblocks.org/)
 * ParMETIS (http://glaros.dtc.umn.edu/gkhome/metis/parmetis/overview)
-* FORTRAN Compiler (e.g., **GNU FORTRAN Compiler** -- https://gcc.gnu.org/fortran/)[Note: You need a working **FORTRAN** compiler to be able to use LAPACK and BLAS. However, this requirements is not necessarily if you use the **C** implementation of **LAPACK** and **BLAS**. In addition, **BLAS** comes with **LAPACK** but you may need to install it separately. The current included archive of **LAPACK** and **BLAS** use FORTRAN compiler. As such, if you are going to use the provided installation, then please make sure that your system has a working **FORTRAN** compiler.]
+* FORTRAN Compiler (e.g., **GNU FORTRAN Compiler** -- https://gcc.gnu.org/fortran/)[Note: You need a working **FORTRAN** compiler to be able to use LAPACK and BLAS. However, this requirements is not necessarily if you use the **C** implementation of **LAPACK** and **BLAS**. In addition, **BLAS** comes with **LAPACK** but you may need to install it separately. The current included archive of **LAPACK** and **BLAS** uses FORTRAN compiler. As such, if you are going to use the provided installation, then please make sure that your system has a working **FORTRAN** compiler, otherwise, you can link to your own installation.]
 
-The repository includes **LAPACK**, **TBB**, and **ParMETIS**. Therefore, you may not need to install yours, you can just use the ones that are included herein. However, if you have a better implementation that you wish to link to, you can just install it on your software environment, and directly link to your existing implementation. Hence, the minimum requirements to run BEMFMM are:
+The repository includes **LAPACK**, **TBB**, and **ParMETIS**, and the default Makefile links to these. Thus, you may not need to install yours, you can just use the ones that are already included herein. However, if you have a better implementation that you wish to link to, just install it on your software environment and directly link to it.
+
+Having said that and since the repository already included the required external libraries, the minimum requirements to run BEMFMM are:
 
 * C/C++ Compiler (e.g., **GNU C/C++ Compiler** -- https://www.gnu.org/software/gcc/)
 * MPI (e.g., **MPICH** -- http://www.mpich.org/)
 * FORTRAN Compiler (e.g., **GNU FORTRAN Compiler** -- https://gcc.gnu.org/fortran/)
 
-Please have these two dependencies configured and installed on your system before running the solver code.
+Please have these three dependencies configured and installed on your system before running the solver code.
 
 ## Compiling and Linking ##
 
@@ -49,6 +51,8 @@ export LD_LIBRARY_PATH="TBB/lib:$LD_LIBRARY_PATH"
 The example herein assumes that you are using the TBB implementation provided with BEMFMM. Hence, you may want to replace `TBB/lib` with your TBB library path.
 
 ## Tested Architectures ##
+
+Here is a list of the systems in which we ran BEMFMM: [Note: For additional information, please read the [supplementary martial] document (docs/sisc_sub_20181111.pdf)]
 
 * Shaheen Supercomputer at KAUST -- Cray XC40
   * GNU Programming Environment -- GCC and GFORTRAN version 7.2.0
@@ -98,6 +102,27 @@ The example herein assumes that you are using the TBB implementation provided wi
 * mustafa.abduljabbar@kaust.edu.sa
 * mohammed.farhan@kaust.edu.sa
 
+## People ##
+
+### Developers ###
+
+* Mustafa Abduljabbar
+* Mohammed Al Farhan
+
+### Collaborators ###
+
+* Noha Al-Harthi
+* Rue Chen
+* George Markomanolis
+* Huda Ibeid
+* Gustavo Chávez
+
+### PIs ###
+
+* Rio Yokota
+* Hakan Bagci
+* David Keyes
+
 ## License ###
 
 MIT License
@@ -106,11 +131,10 @@ MIT License
 
 Support in the form of computing resources was provided by KAUST Extreme Computing Research Center, KAUST Supercomputing Laboratory, KAUST Information Technology Research Division, Intel Parallel Computing Centers, and Cray Supercomputing Center of Excellence. In particular, the authors are very appreciative to Bilel Hadri of KAUST Supercomputer Laboratory for his great help and support throughout scalability experiments n the Shaheen supercomputer.
 
-## References ##
+## Papers ##
 
-* M. Abduljabbar, M. Al Farhan, N. Al-Harthi, R. Chen, R. Yokota, H. Bagci, and D. Keyes, *Extreme Scale FMM-Accelerated Boundary Integral Equation Solver for Wave Scattering*, submitted to SIAM Journal of Scientific Computing (SISC), 2018, arXiv: https://arxiv.org/abs/1803.09948. [Supplementary Materials.](docs/sisc_sub_20181111.pdf).
+* M. Abduljabbar, M. Al Farhan, N. Al-Harthi, R. Chen, R. Yokota, H. Bagci, and D. Keyes, *Extreme Scale FMM-Accelerated Boundary Integral Equation Solver for Wave Scattering*, submitted to SIAM Journal of Scientific Computing (SISC), 2018, arXiv: https://arxiv.org/abs/1803.09948. [Supplementary Material.](docs/sisc_sub_20181111.pdf).
 * M. Abduljabbar, M. Al Farhan, R. Yokota, and D. Keyes, *Performance Evaluation of Computation and Communication Kernels of the Fast Multipole Method on Intel Manycore Architecture*, vol. 10417 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 553–564.
 * M. Abduljabbar, G. S. Markomanolis, H. Ibeid, R. Yokota, and D. Keyes, *Communication Reducing Algorithms for Distributed Hierarchical N-Body Problems with Boundary Distributions*, vol. 10266 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 79–96.
 * M. Abduljabbar and R. Yokota, *N-body methods*, in High Performance Parallelism Pearls, Morgan Kaufmann - Elsevier, Burlington MA, 2015, ch. 10.
-* M. Zandifar, M. Abdul Jabbar, A. Majidi, D. Keyes, N. M. Amato, and L. Rauchwerger, *Composing algorithmic skeletons to express high-performance scientific applications*, in Proceedings of the 29th ACM on International Conference on Supercomputing, ICS '15, New York, NY, USA, 2015, ACM, pp. 415–424.
 * M. Abduljabbar, R. Yokota, and D. Keyes, *Asynchronous Execution of the Fast Multipole Method Using Charm++*, vol. abs/1405.7487 of CoRR, arXiv, 1405.7487, 2014, http://arxiv.org/abs/1405.7487.

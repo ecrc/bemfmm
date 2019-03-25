@@ -97,6 +97,10 @@ Here is a list of the systems in which we ran BEMFMM: [Note: For additional info
 
 ![Image of the Control Parameters](img/parameters.png)
 
+## Concluding Remarks ##
+
+The main focus of this software lies in the development of a highly scalable FMM that can be efficiently applied to the computation of the Helmholtz integral equation kernel. Particularly, our framework deals with addressing the parallel challenges of such application, especially at extreme scale settings, with emphasis on both shared- and distributed- memory performance optimization and tuning on emerging HPC infrastructures. We believe that increasing the convergence rate of the iterative solver by using a preconditioner or switching to a well-conditioned integral equation formulation might be considered beyond the scope of this framework. However, it is definitely in the roadmap of enhancing the stability of the numerical solver as it is a bold item of our ongoing work.
+
 ## Contact ##
 
 * mustafa.abduljabbar@kaust.edu.sa

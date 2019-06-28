@@ -53,7 +53,7 @@ The example herein assumes that you are using the TBB implementation provided wi
 
 ## Tested Architectures ##
 
-Here is a list of the systems in which we ran BEMFMM: [Note: For additional information, please read the supplementary martial document of the SISC paper.]
+Here is a list of the systems in which we ran BEMFMM: [Note: For additional information, please read the supplementary martial document of the SISC paper (https://epubs.siam.org/doi/suppl/10.1137/18M1173599).]
 
 * Shaheen Supercomputer at KAUST -- Cray XC40
   * GNU Programming Environment -- GCC and GFORTRAN version 7.2.0

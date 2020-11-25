@@ -118,7 +118,7 @@ Support in the form of computing resources was provided by KAUST Extreme Computi
 ## Papers ##
 
 * M. Abduljabbar, M. Al Farhan, N. Al-Harthi, R. Chen, R. Yokota, H. Bagci, and D. Keyes, *Extreme Scale FMM-Accelerated Boundary Integral Equation Solver for Wave Scattering*, vol. 41, issue 3, pp. C245–C268, SIAM Journal of Scientific Computing (SISC), 2019.
-* M. Abduljabbar, *Communication Reducing Approaches and Shared-Memory Optimizations for the Hierarchical Fast Multipole Method on Distributed and Many-Core Systems*, [PhD Dissertation, KAUST,] 2018. http://hdl.handle.net/10754/630221.
+* M. Abduljabbar, *Communication Reducing Approaches and Shared-Memory Optimizations for the Hierarchical Fast Multipole Method on Distributed and Many-Core Systems*, [PhD Dissertation, KAUST], 2018. http://hdl.handle.net/10754/630221.
 * M. Abduljabbar, M. Al Farhan, R. Yokota, and D. Keyes, *Performance Evaluation of Computation and Communication Kernels of the Fast Multipole Method on Intel Manycore Architecture*, vol. 10417 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 553–564.
 * M. Abduljabbar, G. S. Markomanolis, H. Ibeid, R. Yokota, and D. Keyes, *Communication Reducing Algorithms for Distributed Hierarchical N-Body Problems with Boundary Distributions*, vol. 10266 of Lecture Notes in Computer Science, Springer International Publishing, Cham, 2017, pp. 79–96.
 * M. Abduljabbar and R. Yokota, *N-body methods*, in High Performance Parallelism Pearls, Morgan Kaufmann - Elsevier, Burlington MA, 2015, ch. 10.
